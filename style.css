@@ -1,0 +1,148 @@
+
+@keyframes logoAnimation {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 457px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: logoAnimation 5s ease forwards;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.nav_links a:link , a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+.card {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20x 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+    flex-direction: column;
+    flex-basis: auto;
+    flex-wrap: nowrap;
+}
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    margin: 10px;
+    border: 10px solid #50C7C7;
+}
+
+
+@media (min-width: 900px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    body > header {
+            position: sticky;
+            top: 0;
+        }
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    .pricing {
+        justify-content: center;
+    }
+    .card {
+        flex-basis: 275px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+
+}
+
+
+@media print {
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        border: 2px solid #45ADAD;
+        flex-basis: 325px;
+        justify-content: space-between;
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: "👍";
+    }
+
+
+}
